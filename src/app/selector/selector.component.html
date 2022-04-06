@@ -1,8 +1,10 @@
 <p>
-    <i class="material-icons">arrow_left</i>
+    <i class="material-icons" (click)="go(-1)">arrow_left</i>
 
-    <span>iygiygiygig</span>
+    <span>
+        {{ dateService.date | async | moment }}
+    </span>
 
-    <i class="material-icons">arrow_right</i>
+    <i class="material-icons" (click)="go(1)">arrow_right</i>
 
 </p>
