@@ -19,7 +19,7 @@ td:hover:not(.disabled){
     cursor: pointer;
 }
 .active{
-    color: #dc3545;
+    color: #8935dc;
     font-weight: bold;
 }
 .selected{
