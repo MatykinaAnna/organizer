@@ -28,9 +28,9 @@ export class TaskService{
                     if (!tasks) {
                         return []
                     }
-                    // console.log(
-                    //     Object.keys(tasks).map(key => ({...tasks[<any>key], id: key}))
-                    // )
+                    console.log(
+                        Object.keys(tasks).map(key => ({...tasks[<any>key], id: key}))
+                    )
                     return Object.keys(tasks).map(key => ({...tasks[<any>key], id: key}))
                 }))
     }

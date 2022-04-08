@@ -31,6 +31,7 @@ export class OrganizerComponent implements OnInit {
       switchMap(value => this.tasksService.load(value))
     ).subscribe(tasks=>{
       this.tasks = tasks
+      console.log(this.tasks)
     })
     //.subscribe(tasks=>console.log(tasks))
   }
