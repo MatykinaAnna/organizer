@@ -9,6 +9,7 @@ import { SelectorComponent } from './selector/selector.component';
 import { OrganizerComponent } from './organizer/organizer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { Organizer1Component } from './organizer1/organizer1.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     CalendarComponent,
     SelectorComponent,
     OrganizerComponent,
-    MomentPipe
+    MomentPipe,
+    Organizer1Component
   ],
   imports: [
     BrowserModule,

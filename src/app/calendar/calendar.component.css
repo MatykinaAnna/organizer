@@ -19,9 +19,9 @@ td:hover:not(.disabled){
     cursor: pointer;
 }
 .active{
-    color: #8935dc;
+    background-color: #bb8aed;
     font-weight: bold;
 }
 .selected{
-    color: #0e735c;
+    background-color: #5bcfb4;
 }

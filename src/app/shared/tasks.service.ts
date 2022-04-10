@@ -28,9 +28,6 @@ export class TaskService{
                     if (!tasks) {
                         return []
                     }
-                    console.log(
-                        Object.keys(tasks).map(key => ({...tasks[<any>key], id: key}))
-                    )
                     return Object.keys(tasks).map(key => ({...tasks[<any>key], id: key}))
                 }))
     }
@@ -38,8 +35,12 @@ export class TaskService{
     create(task: Task): Observable<Task>{
         return this.http.post<CreateResponse>(`${TaskService.url}/${task.date}.json`, task)
         .pipe(map(res => {
-            console.log('Responce',res)
             return {...task, id: res.name}
         }))
+    }
+
+    remove(task: Task): Observable<void> {
+        return this.http
+          .delete<void>(`${TaskService.url}/${task.date}/${task.id}.json`)
     }
 }

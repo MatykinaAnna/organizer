@@ -1,0 +1,10 @@
+form{
+    margin: 1em 0;
+}
+form>div{
+    display: flex;
+    align-items: baseline;
+}
+form>div>input{
+    margin-left: 5px;
+}

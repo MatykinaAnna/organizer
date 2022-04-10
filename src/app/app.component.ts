@@ -9,5 +9,4 @@ import { DateService } from './shared/date.service';
 export class AppComponent{
    constructor(private DateService: DateService){}
 
-
 }

@@ -1,29 +1,36 @@
 <section>
     <header>
-        Organizer: <strong>{{dateService.date | async | moment: 'DD.MM.YYYY '}}</strong>
+        <strong>{{dateService.date | async | moment: 'DD.MM.YYYY '}}</strong>
         <hr>
     </header>
     <main>
-        <ul>
+        <ul *ngIf="tasks.length; else noTasks">
             <li class="task"
                 *ngFor="let task of tasks; let i = index">
-                <!-- <span>
-                    <strong>1</strong>
-                    hhhhhhh
-                </span> -->
                 <strong>{{i+1}}</strong>
                 {{task.title}}
-                <button class="btn btn-primery">
-                    Remove
+                <button class="btn btn-primery btn-del" (click)="remove(task)">
+                    Удалить
                 </button>
             </li>
         </ul>
+        <ng-template #noTasks>
+            <p class="text-center">Нет задач на текущий день...</p>
+        </ng-template>        
+
+        <table>
+            <tr>
+
+            </tr>
+        </table>
+
     </main>
     <footer>
         <form (ngSubmit)="submit()" [formGroup]="form">
             <input type="text" formControlName="title">
             <button class="btn btn-primary btn-block"
-                    [disabled]="form.invalid">Add</button>
+                    [disabled]="form.invalid">Добавить
+            </button>
         </form>
     </footer>
 </section>

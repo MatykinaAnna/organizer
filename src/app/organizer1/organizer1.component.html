@@ -1,0 +1,68 @@
+<section>
+    <header>
+        <strong>{{dateService.date | async | moment: 'DD.MM.YYYY '}}</strong>
+        <hr>
+    </header>
+    <main>
+
+        <form [formGroup]="profileForm" (ngSubmit)="submit()" > 
+            <div>
+                <label for="task1">07:00: </label>
+                <input id="task1" type="text" formControlName="task_07">
+            </div>
+
+            <div>
+                <label for="task1">08:00: </label>
+                <input id="task1" type="text" formControlName="task_08">
+            </div>
+
+            <div>
+                <label for="task1">09:00: </label>
+                <input id="task1" type="text" formControlName="task_09">
+            </div>
+
+            <div>
+                <label for="task1">10:00: </label>
+                <input id="task1" type="text" formControlName="task_10">
+            </div>
+
+            <div>
+                <label for="task1">11:00: </label>
+                <input id="task1" type="text" formControlName="task_11">
+            </div>
+
+            <div>
+                <label for="task1">12:00: </label>
+                <input id="task1" type="text" formControlName="task_12">
+            </div>
+
+            <div>
+                <label for="task1">13:00: </label>
+                <input id="task1" type="text" formControlName="task_13">
+            </div>
+
+            <div>
+                <label for="task1">14:00: </label>
+                <input id="task1" type="text" formControlName="task_14">
+            </div>
+
+            <div>
+                <label for="task1">15:00: </label>
+                <input id="task1" type="text" formControlName="task_15">
+            </div>
+
+            <div>
+                <label for="task1">16:00: </label>
+                <input id="task1" type="text" formControlName="task_16">
+            </div>
+
+            <button
+                type="submit"
+                class="btn btn-primary btn-block"
+            >Add
+            </button>
+
+        </form>
+
+    </main>
+</section>

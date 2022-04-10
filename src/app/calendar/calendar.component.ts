@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
+import 'moment/locale/es'  // without this line it didn't work
+moment.locale('ru')
 import { DateService } from '../shared/date.service'
 
 
@@ -23,7 +25,8 @@ export class CalendarComponent implements OnInit {
 
   public calendar: Week[]|null = null
 
-  constructor(private dateService: DateService) { }
+  constructor(private dateService: DateService) { 
+  }
 
   ngOnInit(): void {
     this.dateService.date.subscribe(this.generate.bind(this))
@@ -56,7 +59,6 @@ export class CalendarComponent implements OnInit {
   }
 
   select(day: moment.Moment){
-    //console.log(day)
     this.dateService.changeDate(day)
   }
 
