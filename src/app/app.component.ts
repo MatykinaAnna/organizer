@@ -7,6 +7,17 @@ import { DateService } from './shared/date.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent{
+
+   organizer1:boolean=true
+
+   onChanged(event:boolean){
+     console.log('onChanged')
+    this.organizer1=false
+    setTimeout(()=>{
+      this.organizer1=true
+    }, 0)
+   }
+
    constructor(private DateService: DateService){}
 
 }

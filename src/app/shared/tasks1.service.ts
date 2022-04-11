@@ -40,4 +40,9 @@ export class TaskService{
                     return Object.keys(tasks).map(key => ({...tasks[<any>key], id: key}))
                 }))
     }
+
+    remove(task: Task): Observable<void> {
+        return this.http
+          .delete<void>(`${TaskService.url}/${task.date}/${task.id}.json`)
+    }
 }    

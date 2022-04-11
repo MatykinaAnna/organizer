@@ -8,6 +8,7 @@
   </main>
 
   <div>
-      <app-organizer1></app-organizer1>
+      <app-organizer1 *ngIf="organizer1"
+      (onChanged)="onChanged($event)"></app-organizer1>
   </div>
 </div>

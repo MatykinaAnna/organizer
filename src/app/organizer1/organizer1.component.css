@@ -8,3 +8,11 @@ form>div{
 form>div>input{
     margin-left: 5px;
 }
+
+form>div>div{
+    margin-left: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}

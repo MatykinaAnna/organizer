@@ -4,62 +4,165 @@
         <hr>
     </header>
     <main>
-
-        <form [formGroup]="profileForm" (ngSubmit)="submit()" > 
+        <form [formGroup]="profileForm" (ngSubmit)="submit()"> 
             <div>
                 <label for="task1">07:00: </label>
-                <input id="task1" type="text" formControlName="task_07">
+                <input *ngIf="!taskIsSet('07').rez"
+                       id="task1"
+                       type="text"
+                       formControlName="task_07"
+                       >
+                <div *ngIf="taskIsSet('07').rez">
+                    <span>{{taskIsSet('07').title}}</span>
+
+                    <button class="btn btn-primery btn-del"
+                            (click)="remove('07')"
+                    >
+                        х
+                    </button>
+                </div>
             </div>
 
             <div>
                 <label for="task1">08:00: </label>
-                <input id="task1" type="text" formControlName="task_08">
-            </div>
+                <input *ngIf="!taskIsSet('08').rez"
+                       id="task1"
+                       type="text"
+                       formControlName="task_08"
+                       >
+                <div *ngIf="taskIsSet('08').rez">
+                    <span>{{taskIsSet('08').title}}</span>
 
-            <div>
-                <label for="task1">09:00: </label>
-                <input id="task1" type="text" formControlName="task_09">
+                    <button class="btn btn-primery btn-del"
+                    (click)="remove('08')">
+                        х
+                    </button>
+                </div>
             </div>
-
+            
             <div>
                 <label for="task1">10:00: </label>
-                <input id="task1" type="text" formControlName="task_10">
+                <input *ngIf="!taskIsSet('10').rez"
+                       id="task1"
+                       type="text"
+                       formControlName="task_10"
+                       >
+                <div *ngIf="taskIsSet('10').rez">
+                    <span>{{taskIsSet('10').title}}</span>
+
+                    <button class="btn btn-primery btn-del"
+                    (click)="remove('10')">
+                        х
+                    </button>
+                </div>
             </div>
 
             <div>
                 <label for="task1">11:00: </label>
-                <input id="task1" type="text" formControlName="task_11">
+                <input *ngIf="!taskIsSet('11').rez"
+                       id="task1"
+                       type="text"
+                       formControlName="task_11"
+                       >
+                <div *ngIf="taskIsSet('11').rez">
+                    <span>{{taskIsSet('11').title}}</span>
+
+                    <button class="btn btn-primery btn-del"
+                    (click)="remove('11')">
+                        х
+                    </button>
+                </div>
             </div>
 
             <div>
                 <label for="task1">12:00: </label>
-                <input id="task1" type="text" formControlName="task_12">
+                <input *ngIf="!taskIsSet('12').rez"
+                       id="task1"
+                       type="text"
+                       formControlName="task_12"
+                       >
+                <div *ngIf="taskIsSet('12').rez">
+                    <span>{{taskIsSet('12').title}}</span>
+
+                    <button class="btn btn-primery btn-del"
+                    (click)="remove('12')">
+                        х
+                    </button>
+                </div>
             </div>
 
             <div>
                 <label for="task1">13:00: </label>
-                <input id="task1" type="text" formControlName="task_13">
+                <input *ngIf="!taskIsSet('13').rez"
+                       id="task1"
+                       type="text"
+                       formControlName="task_13"
+                       >
+                <div *ngIf="taskIsSet('13').rez">
+                    <span>{{taskIsSet('13').title}}</span>
+
+                    <button class="btn btn-primery btn-del"
+                    (click)="remove('13')">
+                        х
+                    </button>
+                </div>
             </div>
 
             <div>
                 <label for="task1">14:00: </label>
-                <input id="task1" type="text" formControlName="task_14">
+                <input *ngIf="!taskIsSet('14').rez"
+                       id="task1"
+                       type="text"
+                       formControlName="task_14"
+                       >
+                <div *ngIf="taskIsSet('14').rez">
+                    <span>{{taskIsSet('14').title}}</span>
+
+                    <button class="btn btn-primery btn-del"
+                            (click)="remove('14')">
+                        х
+                    </button>
+                </div>
             </div>
 
             <div>
                 <label for="task1">15:00: </label>
-                <input id="task1" type="text" formControlName="task_15">
+                <input *ngIf="!taskIsSet('15').rez"
+                       id="task1"
+                       type="text"
+                       formControlName="task_15"
+                       >
+                <div *ngIf="taskIsSet('15').rez">
+                    <span>{{taskIsSet('15').title}}</span>
+
+                    <button class="btn btn-primery btn-del"
+                    (click)="remove('15')">
+                        х
+                    </button>
+                </div>
             </div>
 
             <div>
                 <label for="task1">16:00: </label>
-                <input id="task1" type="text" formControlName="task_16">
+                <input *ngIf="!taskIsSet('16').rez"
+                       id="task1"
+                       type="text"
+                       formControlName="task_16"
+                       >
+                <div *ngIf="taskIsSet('16').rez">
+                    <span>{{taskIsSet('16').title}}</span>
+
+                    <button class="btn btn-primery btn-del"
+                    (click)="remove('16')">
+                        х
+                    </button>
+                </div>
             </div>
 
             <button
                 type="submit"
                 class="btn btn-primary btn-block"
-            >Сохранить
+                >Сохранить
             </button>
 
         </form>

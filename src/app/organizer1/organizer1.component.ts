@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Task } from '../shared/tasks1.service'
 import { TaskService } from '../shared/tasks1.service';
 import { DateService } from '../shared/date.service';
@@ -6,6 +6,11 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { switchMap } from 'rxjs';
 
+
+interface TaskForForm{
+  time: string,
+  name: string
+}
 
 
 @Component({
@@ -29,6 +34,7 @@ export class Organizer1Component implements OnInit {
   });
 
   tasks: Task[] = []
+  @Output() onChanged = new EventEmitter<boolean>();
 
   constructor(public dateService: DateService, 
              private tasksService: TaskService,
@@ -43,6 +49,17 @@ export class Organizer1Component implements OnInit {
 
       console.log(tasks)
     })
+  }
+
+  taskIsSet(time: string):{rez: boolean, title?: string, task?: Task}{
+    let index = this.tasks.findIndex((item: Task):boolean=>{
+      return (item.time == time)
+    })
+    if (index > -1){
+      return {rez: true, title: this.tasks[index].title, task: this.tasks[index]}
+    } else {
+      return {rez: false}
+    }
   }
 
   getTime(name: string):string{
@@ -61,11 +78,22 @@ export class Organizer1Component implements OnInit {
         }
         console.log(task)
         this.tasksService.create(task).subscribe(task=>{
-          console.log(task)
           // this.tasks.push(task)
           // this.form.reset()
+          this.onChanged.emit(true);
         }, err=>console.error(err))
       }
+    }
+  }
+
+  remove(time: string) {
+    let task = this.taskIsSet(time).task
+    console.log('task', task)
+    if (task){
+      this.tasksService.remove(task).subscribe(() => {
+        // this.tasks = this.tasks.filter(t => t.id !== task.id)
+        this.onChanged.emit(true);
+      }, err => console.error(err))
     }
   }
 
