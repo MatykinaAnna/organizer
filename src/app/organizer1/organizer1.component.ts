@@ -31,6 +31,9 @@ export class Organizer1Component implements OnInit {
     task_14: new FormControl(''),
     task_15: new FormControl(''),
     task_16: new FormControl(''),
+    task_17: new FormControl(''),
+    task_18: new FormControl(''),
+    task_19: new FormControl(''),
   });
 
   tasks: Task[] = []

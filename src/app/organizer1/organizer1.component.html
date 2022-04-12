@@ -159,6 +159,57 @@
                 </div>
             </div>
 
+            <div>
+                <label for="task1">17:00: </label>
+                <input *ngIf="!taskIsSet('17').rez"
+                       id="task1"
+                       type="text"
+                       formControlName="task_17"
+                       >
+                <div *ngIf="taskIsSet('17').rez">
+                    <span>{{taskIsSet('17').title}}</span>
+
+                    <button class="btn btn-primery btn-del"
+                    (click)="remove('17')">
+                        х
+                    </button>
+                </div>
+            </div>
+
+            <div>
+                <label for="task1">18:00: </label>
+                <input *ngIf="!taskIsSet('18').rez"
+                       id="task1"
+                       type="text"
+                       formControlName="task_18"
+                       >
+                <div *ngIf="taskIsSet('18').rez">
+                    <span>{{taskIsSet('18').title}}</span>
+
+                    <button class="btn btn-primery btn-del"
+                    (click)="remove('18')">
+                        х
+                    </button>
+                </div>
+            </div>
+
+            <div>
+                <label for="task1">19:00: </label>
+                <input *ngIf="!taskIsSet('19').rez"
+                       id="task1"
+                       type="text"
+                       formControlName="task_19"
+                       >
+                <div *ngIf="taskIsSet('19').rez">
+                    <span>{{taskIsSet('19').title}}</span>
+
+                    <button class="btn btn-primery btn-del"
+                    (click)="remove('19')">
+                        х
+                    </button>
+                </div>
+            </div>
+
             <button
                 type="submit"
                 class="btn btn-primary btn-block"
